@@ -545,8 +545,8 @@
       "title": "Ejemplo log analysis",
       "text": "%pyspark\n\ninputRDD \u003d sc.textFile(\"./logs/\") # RDD de entrada\n\n# se crea un nuevo RDD:\nerrorRDD \u003d inputRDD.filter(lambda line: \"ERROR\" in line) \n\n# se crea otro nuevo RDD\nconfigRDD \u003d inputRDD.filter(lambda line: \"config\" in line) \n\nerrOrConfRDD \u003d errorRDD.union(configRDD) \n\nfor ln, l in enumerate(errOrConfRDD.collect()):\n    print(\"Linea {}:\".format(ln), l)\n",
       "user": "anonymous",
-      "dateUpdated": "2021-11-13 22:26:21.748",
-      "progress": 0,
+      "dateUpdated": "2021-11-14 13:48:57.272",
+      "progress": 100,
       "config": {
         "lineNumbers": true,
         "editorSetting": {
@@ -567,13 +567,37 @@
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Linea 0:  INFO [2021-11-13 22:12:27,983] ({FIFOScheduler-interpreter_480738841-Worker-1} AbstractScheduler.java[runJob]:154) - Job paragraph_1636841499923_901413997 finished by scheduler interpreter_480738841 with status ERROR\nLinea 1: ERROR [2021-11-13 22:24:47,059] ({pool-2-thread-1} ProcessFunction.java[process]:47) - Internal error processing shutdown\nLinea 2: ERROR [2021-11-13 22:24:47,066] ({pool-2-thread-3} ProcessFunction.java[process]:47) - Internal error processing shutdown\nLinea 3: ERROR [2021-11-13 22:24:47,076] ({pool-2-thread-2} ProcessFunction.java[process]:47) - Internal error processing shutdown\nLinea 4:  INFO [2021-11-14 13:03:22,876] ({FIFOScheduler-interpreter_1585480373-Worker-1} AbstractScheduler.java[runJob]:154) - Job 20191121-184701_1405603118 finished by scheduler interpreter_1585480373 with status ERROR\nLinea 5:  INFO [2021-11-14 13:18:01,677] ({FIFOScheduler-interpreter_1585480373-Worker-1} AbstractScheduler.java[runJob]:154) - Job 20191121-184701_1405603118 finished by scheduler interpreter_1585480373 with status ERROR\nLinea 6:  INFO [2021-11-14 13:19:23,656] ({FIFOScheduler-interpreter_1585480373-Worker-1} AbstractScheduler.java[runJob]:154) - Job 20191121-184701_1405603118 finished by scheduler interpreter_1585480373 with status ERROR\nLinea 7:  INFO [2021-11-14 13:21:42,211] ({FIFOScheduler-interpreter_1585480373-Worker-1} AbstractScheduler.java[runJob]:154) - Job 20191121-184701_1405603118 finished by scheduler interpreter_1585480373 with status ERROR\nLinea 8:  INFO [2021-11-14 13:25:35,384] ({FIFOScheduler-interpreter_1585480373-Worker-1} AbstractScheduler.java[runJob]:154) - Job 20191121-184701_1405603118 finished by scheduler interpreter_1585480373 with status ERROR\nLinea 9:  INFO [2021-11-14 13:27:05,331] ({FIFOScheduler-interpreter_1585480373-Worker-1} AbstractScheduler.java[runJob]:154) - Job 20191121-184701_1405603118 finished by scheduler interpreter_1585480373 with status ERROR\nLinea 10:  INFO [2021-11-14 13:27:13,424] ({FIFOScheduler-interpreter_1585480373-Worker-1} AbstractScheduler.java[runJob]:154) - Job 20191121-184701_1405603118 finished by scheduler interpreter_1585480373 with status ERROR\nLinea 11:  INFO [2021-11-14 13:27:57,548] ({FIFOScheduler-interpreter_1585480373-Worker-1} AbstractScheduler.java[runJob]:154) - Job 20191121-184701_1405603118 finished by scheduler interpreter_1585480373 with status ERROR\nLinea 12:  INFO [2021-11-14 13:29:07,108] ({FIFOScheduler-interpreter_1585480373-Worker-1} AbstractScheduler.java[runJob]:154) - Job 20191121-184701_1405603118 finished by scheduler interpreter_1585480373 with status ERROR\nLinea 13:  INFO [2021-11-14 13:30:19,492] ({FIFOScheduler-interpreter_1585480373-Worker-1} AbstractScheduler.java[runJob]:154) - Job 20191121-184701_1405603118 finished by scheduler interpreter_1585480373 with status ERROR\nLinea 14:  INFO [2021-11-14 13:31:57,499] ({FIFOScheduler-interpreter_1585480373-Worker-1} AbstractScheduler.java[runJob]:154) - Job 20191121-184701_1405603118 finished by scheduler interpreter_1585480373 with status ERROR\nLinea 15:  INFO [2021-11-14 13:33:49,238] ({FIFOScheduler-interpreter_1585480373-Worker-1} AbstractScheduler.java[runJob]:154) - Job 20191121-184701_1405603118 finished by scheduler interpreter_1585480373 with status ERROR\nLinea 16:  INFO [2021-11-14 13:35:49,880] ({FIFOScheduler-interpreter_1585480373-Worker-1} AbstractScheduler.java[runJob]:154) - Job 20191121-184701_1405603118 finished by scheduler interpreter_1585480373 with status ERROR\nLinea 17:  INFO [2021-11-14 13:36:13,106] ({FIFOScheduler-interpreter_1585480373-Worker-1} AbstractScheduler.java[runJob]:154) - Job 20191121-184701_1405603118 finished by scheduler interpreter_1585480373 with status ERROR\nLinea 18:  INFO [2021-11-14 13:36:25,022] ({FIFOScheduler-interpreter_1585480373-Worker-1} AbstractScheduler.java[runJob]:154) - Job 20191121-184701_1405603118 finished by scheduler interpreter_1585480373 with status ERROR\nLinea 19:  INFO [2021-11-14 13:38:51,311] ({FIFOScheduler-interpreter_1585480373-Worker-1} AbstractScheduler.java[runJob]:154) - Job 20191121-184701_1405603118 finished by scheduler interpreter_1585480373 with status ERROR\nLinea 20:  INFO [2021-11-14 13:39:49,014] ({FIFOScheduler-interpreter_1585480373-Worker-1} AbstractScheduler.java[runJob]:154) - Job 20191121-184701_1405603118 finished by scheduler interpreter_1585480373 with status ERROR\nLinea 21:  INFO [2021-11-14 13:40:14,408] ({FIFOScheduler-interpreter_1585480373-Worker-1} AbstractScheduler.java[runJob]:154) - Job 20191121-184701_1405603118 finished by scheduler interpreter_1585480373 with status ERROR\nLinea 22:  INFO [2021-11-14 13:40:24,932] ({FIFOScheduler-interpreter_1585480373-Worker-1} AbstractScheduler.java[runJob]:154) - Job 20191121-184701_1405603118 finished by scheduler interpreter_1585480373 with status ERROR\nLinea 23:  INFO [2021-11-14 13:40:44,450] ({FIFOScheduler-interpreter_1585480373-Worker-1} AbstractScheduler.java[runJob]:154) - Job 20191121-184701_1405603118 finished by scheduler interpreter_1585480373 with status ERROR\nLinea 24:  WARN [2021-11-13 22:12:27,983] ({SchedulerFactory4} NotebookServer.java[onStatusChange]:1986) - Job paragraph_1636841499923_901413997 is finished, status: ERROR, exception: null, result: %text \u001b[0;36m  File \u001b[0;32m\"/tmp/ipykernel_357/830152944.py\"\u001b[0;36m, line \u001b[0;32m2\u001b[0m\nLinea 25:  INFO [2021-11-13 22:12:27,990] ({SchedulerFactory4} AbstractScheduler.java[runJob]:154) - Job paragraph_1636841499923_901413997 finished by scheduler RemoteInterpreter-spark-shared_process-shared_session with status ERROR\nLinea 26:  WARN [2021-11-14 13:03:22,878] ({SchedulerFactory3} NotebookServer.java[onStatusChange]:1986) - Job 20191121-184701_1405603118 is finished, status: ERROR, exception: null, result: %text \u001b[0;31m---------------------------------------------------------------------------\u001b[0m\nLinea 27:  INFO [2021-11-14 13:03:22,888] ({SchedulerFactory3} AbstractScheduler.java[runJob]:154) - Job 20191121-184701_1405603118 finished by scheduler RemoteInterpreter-spark-shared_process-shared_session with status ERROR\nLinea 28:  WARN [2021-11-14 13:18:01,678] ({SchedulerFactory7} NotebookServer.java[onStatusChange]:1986) - Job 20191121-184701_1405603118 is finished, status: ERROR, exception: null, result: %text \u001b[0;31m---------------------------------------------------------------------------\u001b[0m\nLinea 29:  INFO [2021-11-14 13:18:01,684] ({SchedulerFactory7} AbstractScheduler.java[runJob]:154) - Job 20191121-184701_1405603118 finished by scheduler RemoteInterpreter-spark-shared_process-shared_session with status ERROR\nLinea 30:  WARN [2021-11-14 13:19:23,660] ({SchedulerFactory6} NotebookServer.java[onStatusChange]:1986) - Job 20191121-184701_1405603118 is finished, status: ERROR, exception: null, result: %text \u001b[0;31m---------------------------------------------------------------------------\u001b[0m\nLinea 31:  INFO [2021-11-14 13:19:23,667] ({SchedulerFactory6} AbstractScheduler.java[runJob]:154) - Job 20191121-184701_1405603118 finished by scheduler RemoteInterpreter-spark-shared_process-shared_session with status ERROR\nLinea 32:  WARN [2021-11-14 13:21:42,214] ({SchedulerFactory9} NotebookServer.java[onStatusChange]:1986) - Job 20191121-184701_1405603118 is finished, status: ERROR, exception: null, result: %text \u001b[0;31m---------------------------------------------------------------------------\u001b[0m\nLinea 33:  INFO [2021-11-14 13:21:42,221] ({SchedulerFactory9} AbstractScheduler.java[runJob]:154) - Job 20191121-184701_1405603118 finished by scheduler RemoteInterpreter-spark-shared_process-shared_session with status ERROR\nLinea 34:  WARN [2021-11-14 13:25:35,386] ({SchedulerFactory3} NotebookServer.java[onStatusChange]:1986) - Job 20191121-184701_1405603118 is finished, status: ERROR, exception: null, result: %text \u001b[0;31m---------------------------------------------------------------------------\u001b[0m\nLinea 35:  INFO [2021-11-14 13:25:35,390] ({SchedulerFactory3} AbstractScheduler.java[runJob]:154) - Job 20191121-184701_1405603118 finished by scheduler RemoteInterpreter-spark-shared_process-shared_session with status ERROR\nLinea 36:  WARN [2021-11-14 13:27:05,331] ({SchedulerFactory11} NotebookServer.java[onStatusChange]:1986) - Job 20191121-184701_1405603118 is finished, status: ERROR, exception: null, result: %text \u001b[0;36m  File \u001b[0;32m\"/tmp/ipykernel_277/2579915123.py\"\u001b[0;36m, line \u001b[0;32m21\u001b[0m\nLinea 37:  INFO [2021-11-14 13:27:05,336] ({SchedulerFactory11} AbstractScheduler.java[runJob]:154) - Job 20191121-184701_1405603118 finished by scheduler RemoteInterpreter-spark-shared_process-shared_session with status ERROR\nLinea 38:  WARN [2021-11-14 13:27:13,437] ({SchedulerFactory7} NotebookServer.java[onStatusChange]:1986) - Job 20191121-184701_1405603118 is finished, status: ERROR, exception: null, result: %text \u001b[0;31m---------------------------------------------------------------------------\u001b[0m\nLinea 39:  INFO [2021-11-14 13:27:13,452] ({SchedulerFactory7} AbstractScheduler.java[runJob]:154) - Job 20191121-184701_1405603118 finished by scheduler RemoteInterpreter-spark-shared_process-shared_session with status ERROR\nLinea 40:  WARN [2021-11-14 13:27:57,550] ({SchedulerFactory2} NotebookServer.java[onStatusChange]:1986) - Job 20191121-184701_1405603118 is finished, status: ERROR, exception: null, result: %text \u001b[0;31m---------------------------------------------------------------------------\u001b[0m\nLinea 41:  INFO [2021-11-14 13:27:57,558] ({SchedulerFactory2} AbstractScheduler.java[runJob]:154) - Job 20191121-184701_1405603118 finished by scheduler RemoteInterpreter-spark-shared_process-shared_session with status ERROR\nLinea 42:  WARN [2021-11-14 13:29:07,108] ({SchedulerFactory13} NotebookServer.java[onStatusChange]:1986) - Job 20191121-184701_1405603118 is finished, status: ERROR, exception: null, result: %text \u001b[0;31m---------------------------------------------------------------------------\u001b[0m\nLinea 43:  INFO [2021-11-14 13:29:07,114] ({SchedulerFactory13} AbstractScheduler.java[runJob]:154) - Job 20191121-184701_1405603118 finished by scheduler RemoteInterpreter-spark-shared_process-shared_session with status ERROR\nLinea 44:  WARN [2021-11-14 13:30:19,493] ({SchedulerFactory24} NotebookServer.java[onStatusChange]:1986) - Job 20191121-184701_1405603118 is finished, status: ERROR, exception: null, result: %text \u001b[0;31m---------------------------------------------------------------------------\u001b[0m\nLinea 45:  INFO [2021-11-14 13:30:19,498] ({SchedulerFactory24} AbstractScheduler.java[runJob]:154) - Job 20191121-184701_1405603118 finished by scheduler RemoteInterpreter-spark-shared_process-shared_session with status ERROR\nLinea 46:  WARN [2021-11-14 13:31:57,500] ({SchedulerFactory14} NotebookServer.java[onStatusChange]:1986) - Job 20191121-184701_1405603118 is finished, status: ERROR, exception: null, result: %text \u001b[0;31m---------------------------------------------------------------------------\u001b[0m\nLinea 47:  INFO [2021-11-14 13:31:57,506] ({SchedulerFactory14} AbstractScheduler.java[runJob]:154) - Job 20191121-184701_1405603118 finished by scheduler RemoteInterpreter-spark-shared_process-shared_session with status ERROR\nLinea 48:  WARN [2021-11-14 13:33:49,239] ({SchedulerFactory6} NotebookServer.java[onStatusChange]:1986) - Job 20191121-184701_1405603118 is finished, status: ERROR, exception: null, result: %text \u001b[0;31m---------------------------------------------------------------------------\u001b[0m\nLinea 49:  INFO [2021-11-14 13:33:49,250] ({SchedulerFactory6} AbstractScheduler.java[runJob]:154) - Job 20191121-184701_1405603118 finished by scheduler RemoteInterpreter-spark-shared_process-shared_session with status ERROR\nLinea 50:  WARN [2021-11-14 13:35:49,882] ({SchedulerFactory15} NotebookServer.java[onStatusChange]:1986) - Job 20191121-184701_1405603118 is finished, status: ERROR, exception: null, result: %text \u001b[0;31m---------------------------------------------------------------------------\u001b[0m\nLinea 51:  INFO [2021-11-14 13:35:49,891] ({SchedulerFactory15} AbstractScheduler.java[runJob]:154) - Job 20191121-184701_1405603118 finished by scheduler RemoteInterpreter-spark-shared_process-shared_session with status ERROR\nLinea 52:  WARN [2021-11-14 13:36:13,106] ({SchedulerFactory9} NotebookServer.java[onStatusChange]:1986) - Job 20191121-184701_1405603118 is finished, status: ERROR, exception: null, result: %text \u001b[0;31m---------------------------------------------------------------------------\u001b[0m\nLinea 53:  INFO [2021-11-14 13:36:13,120] ({SchedulerFactory9} AbstractScheduler.java[runJob]:154) - Job 20191121-184701_1405603118 finished by scheduler RemoteInterpreter-spark-shared_process-shared_session with status ERROR\nLinea 54:  WARN [2021-11-14 13:36:25,023] ({SchedulerFactory16} NotebookServer.java[onStatusChange]:1986) - Job 20191121-184701_1405603118 is finished, status: ERROR, exception: null, result: %text \u001b[0;31m---------------------------------------------------------------------------\u001b[0m\nLinea 55:  INFO [2021-11-14 13:36:25,029] ({SchedulerFactory16} AbstractScheduler.java[runJob]:154) - Job 20191121-184701_1405603118 finished by scheduler RemoteInterpreter-spark-shared_process-shared_session with status ERROR\nLinea 56:  WARN [2021-11-14 13:38:51,311] ({SchedulerFactory4} NotebookServer.java[onStatusChange]:1986) - Job 20191121-184701_1405603118 is finished, status: ERROR, exception: null, result: %text \u001b[0;31m---------------------------------------------------------------------------\u001b[0m\nLinea 57:  INFO [2021-11-14 13:38:51,316] ({SchedulerFactory4} AbstractScheduler.java[runJob]:154) - Job 20191121-184701_1405603118 finished by scheduler RemoteInterpreter-spark-shared_process-shared_session with status ERROR\nLinea 58:  WARN [2021-11-14 13:39:49,015] ({SchedulerFactory17} NotebookServer.java[onStatusChange]:1986) - Job 20191121-184701_1405603118 is finished, status: ERROR, exception: null, result: %text \u001b[0;31m---------------------------------------------------------------------------\u001b[0m\nLinea 59:  INFO [2021-11-14 13:39:49,018] ({SchedulerFactory17} AbstractScheduler.java[runJob]:154) - Job 20191121-184701_1405603118 finished by scheduler RemoteInterpreter-spark-shared_process-shared_session with status ERROR\nLinea 60:  WARN [2021-11-14 13:40:14,409] ({SchedulerFactory10} NotebookServer.java[onStatusChange]:1986) - Job 20191121-184701_1405603118 is finished, status: ERROR, exception: null, result: %text \u001b[0;31m---------------------------------------------------------------------------\u001b[0m\nLinea 61:  INFO [2021-11-14 13:40:14,419] ({SchedulerFactory10} AbstractScheduler.java[runJob]:154) - Job 20191121-184701_1405603118 finished by scheduler RemoteInterpreter-spark-shared_process-shared_session with status ERROR\nLinea 62:  WARN [2021-11-14 13:40:24,933] ({SchedulerFactory18} NotebookServer.java[onStatusChange]:1986) - Job 20191121-184701_1405603118 is finished, status: ERROR, exception: null, result: %text \u001b[0;31m---------------------------------------------------------------------------\u001b[0m\nLinea 63:  INFO [2021-11-14 13:40:24,958] ({SchedulerFactory18} AbstractScheduler.java[runJob]:154) - Job 20191121-184701_1405603118 finished by scheduler RemoteInterpreter-spark-shared_process-shared_session with status ERROR\nLinea 64:  WARN [2021-11-14 13:40:44,451] ({SchedulerFactory3} NotebookServer.java[onStatusChange]:1986) - Job 20191121-184701_1405603118 is finished, status: ERROR, exception: null, result: %text \u001b[0;31m---------------------------------------------------------------------------\u001b[0m\nLinea 65:  INFO [2021-11-14 13:40:44,463] ({SchedulerFactory3} AbstractScheduler.java[runJob]:154) - Job 20191121-184701_1405603118 finished by scheduler RemoteInterpreter-spark-shared_process-shared_session with status ERROR\nLinea 66:  WARN [2021-11-13 21:55:01,815] ({pool-2-thread-1} ZeppelinConfiguration.java[\u003cinit\u003e]:85) - Failed to load XML configuration, proceeding with a default,for a stacktrace activate the debug log\nLinea 67:  WARN [2021-11-13 21:55:13,424] ({FIFOScheduler-interpreter_480738841-Worker-1} Logging.scala[logWarning]:66) - Fair Scheduler configuration file not found so jobs will be scheduled in FIFO order. To use fair scheduling, configure pools in fairscheduler.xml or set spark.scheduler.allocation.file to a file that contains the configuration.\nLinea 68:  WARN [2021-11-14 12:16:53,621] ({pool-2-thread-1} ZeppelinConfiguration.java[\u003cinit\u003e]:85) - Failed to load XML configuration, proceeding with a default,for a stacktrace activate the debug log\nLinea 69:  WARN [2021-11-14 12:17:04,747] ({FIFOScheduler-interpreter_1585480373-Worker-1} Logging.scala[logWarning]:66) - Fair Scheduler configuration file not found so jobs will be scheduled in FIFO order. To use fair scheduling, configure pools in fairscheduler.xml or set spark.scheduler.allocation.file to a file that contains the configuration.\nLinea 70:  WARN [2021-11-13 18:46:04,723] ({main} ZeppelinConfiguration.java[\u003cinit\u003e]:85) - Failed to load XML configuration, proceeding with a default,for a stacktrace activate the debug log\nLinea 71:  WARN [2021-11-13 18:46:05,058] ({main} ZeppelinConfiguration.java[getConfigFSDir]:653) - zeppelin.config.fs.dir is not specified, fall back to local conf directory zeppelin.conf.dir\nLinea 72:  WARN [2021-11-13 18:46:05,059] ({main} ZeppelinConfiguration.java[getConfigFSDir]:653) - zeppelin.config.fs.dir is not specified, fall back to local conf directory zeppelin.conf.dir\nLinea 73:  WARN [2021-11-13 18:46:05,059] ({main} ZeppelinConfiguration.java[getConfigFSDir]:653) - zeppelin.config.fs.dir is not specified, fall back to local conf directory zeppelin.conf.dir\nLinea 74:  INFO [2021-11-13 21:54:43,628] ({SchedulerFactory2} SparkInterpreterLauncher.java[buildEnvFromProperties]:245) - buildEnvFromProperties: {PATH\u003d/opt/conda/envs/python_3_with_R/bin:/opt/conda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin, ZEPPELIN_LOG_DIR\u003d/opt/zeppelin/logs, ZEPPELIN_WAR\u003d/opt/zeppelin/zeppelin-web-0.10.0.war, ZEPPELIN_ENCODING\u003dUTF-8, ZEPPELIN_SPARK_CONF\u003d--conf|spark.executor.instances\u003d2|--conf|spark.sql.catalogImplementation\u003dhive|--conf|spark.app.name\u003dspark-shared_process|--conf|spark.webui.yarn.useProxy\u003dfalse|--conf|spark.driver.cores\u003d1|--conf|spark.executor.memory\u003d1g|--conf|spark.master\u003dlocal[*]|--conf|spark.jars.packages\u003dgraphframes:graphframes:0.6.0-spark2.2-s_2.11|--conf|spark.driver.memory\u003d1g|--conf|spark.executor.cores\u003d1, JAVA_HOME\u003d/usr/lib/jvm/java-8-openjdk-amd64, JAVA_OPTS\u003d  -Dfile.encoding\u003dUTF-8 -Xmx1024m -Dlog4j.configuration\u003dfile:///opt/zeppelin/conf/log4j.properties -Dzeppelin.log.file\u003d/opt/zeppelin/logs/zeppelin--localhost.log, TERM\u003dscreen, INTERPRETER_GROUP_ID\u003dspark-shared_process, S_VERSION\u003d2.4.8, Z_VERSION\u003d0.10.0, LANG\u003den_US.UTF-8, JAVA_INTP_OPTS\u003d -Dfile.encoding\u003dUTF-8 -Dlog4j.configuration\u003dfile:///opt/zeppelin/conf/log4j.properties -Dlog4j.configurationFile\u003dfile:///opt/zeppelin/conf/log4j2.properties, PYSPARK_PYTHON\u003dpython, SPARK_HOME\u003d/opt/spark, ZEPPELIN_CONF_DIR\u003d/opt/zeppelin/conf, ZEPPELIN_NOTEBOOK_DIR\u003d/notebook, STY\u003d11.pts-0.localhost, ZEPPELIN_RUNNER\u003d/usr/lib/jvm/java-8-openjdk-amd64/bin/java, PWD\u003d/opt/zeppelin, ZEPPELIN_HOME\u003d/opt/zeppelin, LOG_TAG\u003d[ZEPPELIN_0.10.0]:, SHELL\u003d/bin/bash, ZEPPELIN_INTP_MEM\u003d-Xmx1024m, PYSPARK_DRIVER_PYTHON\u003dpython, ZEPPELIN_PID_DIR\u003d/opt/zeppelin/run, ZEPPELIN_ANGULAR_WAR\u003d/opt/zeppelin/zeppelin-web-angular-0.10.0.war, WINDOW\u003d0, ZEPPELIN_MEM\u003d-Xmx1024m, ZEPPELIN_INTERPRETER_CONNECT_TIMEOUT\u003d120000, HOSTNAME\u003dlocalhost, LC_ALL\u003den_US.UTF-8, ZEPPELIN_IDENT_STRING\u003d, PYSPARK_PIN_THREAD\u003dtrue, TERMCAP\u003dSC|screen|VT 100/ANSI X3.64 virtual terminal:DO\u003d\\E[%dB:LE\u003d\\E[%dD:RI\u003d\\E[%dC:UP\u003d\\E[%dA:bs:bt\u003d\\E[Z:cd\u003d\\E[J:ce\u003d\\E[K:cl\u003d\\E[H\\E[J:cm\u003d\\E[%i%d;%dH:ct\u003d\\E[3g:do\u003d^J:nd\u003d\\E[C:pt:rc\u003d\\E8:rs\u003d\\Ec:sc\u003d\\E7:st\u003d\\EH:up\u003d\\EM:le\u003d^H:bl\u003d^G:cr\u003d^M:it#8:ho\u003d\\E[H:nw\u003d\\EE:ta\u003d^I:is\u003d\\E)0:li#53:co#211:am:xn:xv:LP:sr\u003d\\EM:al\u003d\\E[L:AL\u003d\\E[%dL:cs\u003d\\E[%i%d;%dr:dl\u003d\\E[M:DL\u003d\\E[%dM:dc\u003d\\E[P:DC\u003d\\E[%dP:im\u003d\\E[4h:ei\u003d\\E[4l:mi:IC\u003d\\E[%d@:ks\u003d\\E[?1h\\E\u003d:ke\u003d\\E[?1l\\E\u003e:vi\u003d\\E[?25l:ve\u003d\\E[34h\\E[?25h:vs\u003d\\E[34l:ti\u003d\\E[?1049h:te\u003d\\E[?1049l:us\u003d\\E[4m:ue\u003d\\E[24m:so\u003d\\E[3m:se\u003d\\E[23m:mb\u003d\\E[5m:md\u003d\\E[1m:mh\u003d\\E[2m:mr\u003d\\E[7m:me\u003d\\E[m:ms:Co#8:pa#64:AF\u003d\\E[3%dm:AB\u003d\\E[4%dm:op\u003d\\E[39;49m:AX:vb\u003d\\Eg:G0:as\u003d\\E(0:ae\u003d\\E(B:ac\u003d\\140\\140aaffggjjkkllmmnnooppqqrrssttuuvvwwxxyyzz{{||}}~~..--++,,hhII00:po\u003d\\E[5i:pf\u003d\\E[4i:Km\u003d\\E[M:k0\u003d\\E[10~:k1\u003d\\EOP:k2\u003d\\EOQ:k3\u003d\\EOR:k4\u003d\\EOS:k5\u003d\\E[15~:k6\u003d\\E[17~:k7\u003d\\E[18~:k8\u003d\\E[19~:k9\u003d\\E[20~:k;\u003d\\E[21~:F1\u003d\\E[23~:F2\u003d\\E[24~:kB\u003d\\E[Z:kh\u003d\\E[1~:@1\u003d\\E[1~:kH\u003d\\E[4~:@7\u003d\\E[4~:kN\u003d\\E[6~:kP\u003d\\E[5~:kI\u003d\\E[2~:kD\u003d\\E[3~:ku\u003d\\EOA:kd\u003d\\EOB:kr\u003d\\EOC:kl\u003d\\EOD:km:, ZEPPELIN_ADDR\u003d0.0.0.0, ZEPPELIN_INTERPRETER_REMOTE_RUNNER\u003dbin/interpreter.sh, SHLVL\u003d0, HOME\u003d/opt/zeppelin}\nLinea 75:  INFO [2021-11-13 21:54:44,980] ({Exec Stream Pumper} ProcessLauncher.java[processLine]:189) - [INFO] Interpreter launch command: /opt/spark/bin/spark-submit --class org.apache.zeppelin.interpreter.remote.RemoteInterpreterServer --driver-class-path :/opt/zeppelin/local-repo/spark/*:/opt/zeppelin/interpreter/spark/*:::/opt/zeppelin/interpreter/zeppelin-interpreter-shaded-0.10.0.jar:/opt/zeppelin/interpreter/spark/spark-interpreter-0.10.0.jar --driver-java-options  -Dfile.encoding\u003dUTF-8 -Dlog4j.configuration\u003dfile:///opt/zeppelin/conf/log4j.properties -Dlog4j.configurationFile\u003dfile:///opt/zeppelin/conf/log4j2.properties -Dzeppelin.log.file\u003d/opt/zeppelin/logs/zeppelin-interpreter-spark-shared_process--localhost.log --conf spark.executor.instances\u003d2 --conf spark.sql.catalogImplementation\u003dhive --conf spark.app.name\u003dspark-shared_process --conf spark.webui.yarn.useProxy\u003dfalse --conf spark.driver.cores\u003d1 --conf spark.executor.memory\u003d1g --conf spark.master\u003dlocal[*] --conf spark.jars.packages\u003dgraphframes:graphframes:0.6.0-spark2.2-s_2.11 --conf spark.driver.memory\u003d1g --conf spark.executor.cores\u003d1 /opt/zeppelin/interpreter/spark/spark-interpreter-0.10.0.jar 172.17.0.2 43937 spark-shared_process :\nLinea 76:  WARN [2021-11-13 22:25:12,245] ({main} ZeppelinConfiguration.java[\u003cinit\u003e]:85) - Failed to load XML configuration, proceeding with a default,for a stacktrace activate the debug log\nLinea 77:  WARN [2021-11-13 22:25:12,625] ({main} ZeppelinConfiguration.java[getConfigFSDir]:653) - zeppelin.config.fs.dir is not specified, fall back to local conf directory zeppelin.conf.dir\nLinea 78:  WARN [2021-11-13 22:25:12,626] ({main} ZeppelinConfiguration.java[getConfigFSDir]:653) - zeppelin.config.fs.dir is not specified, fall back to local conf directory zeppelin.conf.dir\nLinea 79:  WARN [2021-11-13 22:25:12,626] ({main} ZeppelinConfiguration.java[getConfigFSDir]:653) - zeppelin.config.fs.dir is not specified, fall back to local conf directory zeppelin.conf.dir\nLinea 80:  WARN [2021-11-14 12:32:20,243] ({pool-2-thread-1} ZeppelinConfiguration.java[\u003cinit\u003e]:85) - Failed to load XML configuration, proceeding with a default,for a stacktrace activate the debug log\nLinea 81:  WARN [2021-11-14 12:15:13,640] ({main} ZeppelinConfiguration.java[\u003cinit\u003e]:85) - Failed to load XML configuration, proceeding with a default,for a stacktrace activate the debug log\nLinea 82:  WARN [2021-11-14 12:15:14,091] ({main} ZeppelinConfiguration.java[getConfigFSDir]:653) - zeppelin.config.fs.dir is not specified, fall back to local conf directory zeppelin.conf.dir\nLinea 83:  WARN [2021-11-14 12:15:14,091] ({main} ZeppelinConfiguration.java[getConfigFSDir]:653) - zeppelin.config.fs.dir is not specified, fall back to local conf directory zeppelin.conf.dir\nLinea 84:  WARN [2021-11-14 12:15:14,091] ({main} ZeppelinConfiguration.java[getConfigFSDir]:653) - zeppelin.config.fs.dir is not specified, fall back to local conf directory zeppelin.conf.dir\nLinea 85:  INFO [2021-11-14 12:16:33,081] ({SchedulerFactory2} SparkInterpreterLauncher.java[buildEnvFromProperties]:245) - buildEnvFromProperties: {PATH\u003d/opt/conda/envs/python_3_with_R/bin:/opt/conda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin, ZEPPELIN_LOG_DIR\u003d/opt/zeppelin/logs, ZEPPELIN_WAR\u003d/opt/zeppelin/zeppelin-web-0.10.0.war, ZEPPELIN_ENCODING\u003dUTF-8, ZEPPELIN_SPARK_CONF\u003d--conf|spark.executor.instances\u003d2|--conf|spark.sql.catalogImplementation\u003dhive|--conf|spark.app.name\u003dspark-shared_process|--conf|spark.webui.yarn.useProxy\u003dfalse|--conf|spark.driver.cores\u003d1|--conf|spark.executor.memory\u003d1g|--conf|spark.master\u003dlocal[*]|--conf|spark.jars.packages\u003dgraphframes:graphframes:0.6.0-spark2.2-s_2.11|--conf|spark.driver.memory\u003d1g|--conf|spark.executor.cores\u003d1, JAVA_HOME\u003d/usr/lib/jvm/java-8-openjdk-amd64, JAVA_OPTS\u003d  -Dfile.encoding\u003dUTF-8 -Xmx1024m -Dlog4j.configuration\u003dfile:///opt/zeppelin/conf/log4j.properties -Dzeppelin.log.file\u003d/opt/zeppelin/logs/zeppelin--localhost.log, TERM\u003dscreen, INTERPRETER_GROUP_ID\u003dspark-shared_process, S_VERSION\u003d2.4.8, Z_VERSION\u003d0.10.0, LANG\u003den_US.UTF-8, JAVA_INTP_OPTS\u003d -Dfile.encoding\u003dUTF-8 -Dlog4j.configuration\u003dfile:///opt/zeppelin/conf/log4j.properties -Dlog4j.configurationFile\u003dfile:///opt/zeppelin/conf/log4j2.properties, PYSPARK_PYTHON\u003dpython, SPARK_HOME\u003d/opt/spark, ZEPPELIN_CONF_DIR\u003d/opt/zeppelin/conf, ZEPPELIN_NOTEBOOK_DIR\u003d/notebook, STY\u003d11.pts-0.localhost, ZEPPELIN_RUNNER\u003d/usr/lib/jvm/java-8-openjdk-amd64/bin/java, PWD\u003d/opt/zeppelin, ZEPPELIN_HOME\u003d/opt/zeppelin, LOG_TAG\u003d[ZEPPELIN_0.10.0]:, SHELL\u003d/bin/bash, ZEPPELIN_INTP_MEM\u003d-Xmx1024m, PYSPARK_DRIVER_PYTHON\u003dpython, ZEPPELIN_PID_DIR\u003d/opt/zeppelin/run, ZEPPELIN_ANGULAR_WAR\u003d/opt/zeppelin/zeppelin-web-angular-0.10.0.war, WINDOW\u003d0, ZEPPELIN_MEM\u003d-Xmx1024m, ZEPPELIN_INTERPRETER_CONNECT_TIMEOUT\u003d120000, HOSTNAME\u003dlocalhost, LC_ALL\u003den_US.UTF-8, ZEPPELIN_IDENT_STRING\u003d, PYSPARK_PIN_THREAD\u003dtrue, TERMCAP\u003dSC|screen|VT 100/ANSI X3.64 virtual terminal:DO\u003d\\E[%dB:LE\u003d\\E[%dD:RI\u003d\\E[%dC:UP\u003d\\E[%dA:bs:bt\u003d\\E[Z:cd\u003d\\E[J:ce\u003d\\E[K:cl\u003d\\E[H\\E[J:cm\u003d\\E[%i%d;%dH:ct\u003d\\E[3g:do\u003d^J:nd\u003d\\E[C:pt:rc\u003d\\E8:rs\u003d\\Ec:sc\u003d\\E7:st\u003d\\EH:up\u003d\\EM:le\u003d^H:bl\u003d^G:cr\u003d^M:it#8:ho\u003d\\E[H:nw\u003d\\EE:ta\u003d^I:is\u003d\\E)0:li#53:co#104:am:xn:xv:LP:sr\u003d\\EM:al\u003d\\E[L:AL\u003d\\E[%dL:cs\u003d\\E[%i%d;%dr:dl\u003d\\E[M:DL\u003d\\E[%dM:dc\u003d\\E[P:DC\u003d\\E[%dP:im\u003d\\E[4h:ei\u003d\\E[4l:mi:IC\u003d\\E[%d@:ks\u003d\\E[?1h\\E\u003d:ke\u003d\\E[?1l\\E\u003e:vi\u003d\\E[?25l:ve\u003d\\E[34h\\E[?25h:vs\u003d\\E[34l:ti\u003d\\E[?1049h:te\u003d\\E[?1049l:us\u003d\\E[4m:ue\u003d\\E[24m:so\u003d\\E[3m:se\u003d\\E[23m:mb\u003d\\E[5m:md\u003d\\E[1m:mh\u003d\\E[2m:mr\u003d\\E[7m:me\u003d\\E[m:ms:Co#8:pa#64:AF\u003d\\E[3%dm:AB\u003d\\E[4%dm:op\u003d\\E[39;49m:AX:vb\u003d\\Eg:G0:as\u003d\\E(0:ae\u003d\\E(B:ac\u003d\\140\\140aaffggjjkkllmmnnooppqqrrssttuuvvwwxxyyzz{{||}}~~..--++,,hhII00:po\u003d\\E[5i:pf\u003d\\E[4i:Km\u003d\\E[M:k0\u003d\\E[10~:k1\u003d\\EOP:k2\u003d\\EOQ:k3\u003d\\EOR:k4\u003d\\EOS:k5\u003d\\E[15~:k6\u003d\\E[17~:k7\u003d\\E[18~:k8\u003d\\E[19~:k9\u003d\\E[20~:k;\u003d\\E[21~:F1\u003d\\E[23~:F2\u003d\\E[24~:kB\u003d\\E[Z:kh\u003d\\E[1~:@1\u003d\\E[1~:kH\u003d\\E[4~:@7\u003d\\E[4~:kN\u003d\\E[6~:kP\u003d\\E[5~:kI\u003d\\E[2~:kD\u003d\\E[3~:ku\u003d\\EOA:kd\u003d\\EOB:kr\u003d\\EOC:kl\u003d\\EOD:km:, ZEPPELIN_ADDR\u003d0.0.0.0, ZEPPELIN_INTERPRETER_REMOTE_RUNNER\u003dbin/interpreter.sh, SHLVL\u003d0, HOME\u003d/opt/zeppelin}\nLinea 86:  INFO [2021-11-14 12:16:33,794] ({Exec Stream Pumper} ProcessLauncher.java[processLine]:189) - [INFO] Interpreter launch command: /opt/spark/bin/spark-submit --class org.apache.zeppelin.interpreter.remote.RemoteInterpreterServer --driver-class-path :/opt/zeppelin/local-repo/spark/*:/opt/zeppelin/interpreter/spark/*:::/opt/zeppelin/interpreter/zeppelin-interpreter-shaded-0.10.0.jar:/opt/zeppelin/interpreter/spark/spark-interpreter-0.10.0.jar --driver-java-options  -Dfile.encoding\u003dUTF-8 -Dlog4j.configuration\u003dfile:///opt/zeppelin/conf/log4j.properties -Dlog4j.configurationFile\u003dfile:///opt/zeppelin/conf/log4j2.properties -Dzeppelin.log.file\u003d/opt/zeppelin/logs/zeppelin-interpreter-spark-shared_process--localhost.log --conf spark.executor.instances\u003d2 --conf spark.sql.catalogImplementation\u003dhive --conf spark.app.name\u003dspark-shared_process --conf spark.webui.yarn.useProxy\u003dfalse --conf spark.driver.cores\u003d1 --conf spark.executor.memory\u003d1g --conf spark.master\u003dlocal[*] --conf spark.jars.packages\u003dgraphframes:graphframes:0.6.0-spark2.2-s_2.11 --conf spark.driver.memory\u003d1g --conf spark.executor.cores\u003d1 /opt/zeppelin/interpreter/spark/spark-interpreter-0.10.0.jar 172.17.0.2 32821 spark-shared_process :\nLinea 87:  INFO [2021-11-14 12:32:18,701] ({Exec Stream Pumper} ProcessLauncher.java[processLine]:189) - [INFO] Interpreter launch command: /usr/lib/jvm/java-8-openjdk-amd64/bin/java -Dfile.encoding\u003dUTF-8 -Dlog4j.configuration\u003dfile:///opt/zeppelin/conf/log4j.properties -Dlog4j.configurationFile\u003dfile:///opt/zeppelin/conf/log4j2.properties -Dzeppelin.log.file\u003d/opt/zeppelin/logs/zeppelin-interpreter-md-shared_process--localhost.log -Xmx1024m -cp :/opt/zeppelin/local-repo/md/*:/opt/zeppelin/interpreter/md/*:::/opt/zeppelin/interpreter/zeppelin-interpreter-shaded-0.10.0.jar org.apache.zeppelin.interpreter.remote.RemoteInterpreterServer 172.17.0.2 32821 md-shared_process :\n"
+          }
+        ]
+      },
       "apps": [],
-      "runtimeInfos": {},
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d17"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1636842381748_167103397",
       "id": "20201023-002107_2147167260",
       "dateCreated": "2021-11-13 22:26:21.748",
-      "status": "READY"
+      "dateStarted": "2021-11-14 13:48:57.279",
+      "dateFinished": "2021-11-14 13:48:58.857",
+      "status": "FINISHED"
     },
     {
       "text": "print(s\"\"\"%html\n\u003cimg src\u003d\"$baseDir/02_spark_core/log_linage.png\" alt\u003d\"Drawing\" style\u003d\"width: 70%;\"/\u003e\n\"\"\")\n",
@@ -741,10 +765,10 @@
       "status": "READY"
     },
     {
-      "text": "%pyspark\nlines \u003d sc.textFile(\"README.md\")\n\nwords \u003d lines \\\n    .flatMap(lambda line: line.split(\" \")) \\\n    .filter(lambda word: word)\n\n#MapReduce\nwordCount \u003d words \\\n    .map(lambda word: (word,1)) \\\n    .reduceByKey(lambda n,m: n+m)\n\nprint(wordCount.take(1))\n\n# Ver en SparkUI",
+      "text": "%pyspark\nlines \u003d sc.textFile(\"README.md\")\n\nwords \u003d lines \\\n    .flatMap(lambda line: line.split(\" \")) \\\n    .filter(lambda word: word)\n\n#MapReduce\nwordCount \u003d words \\\n    .map(lambda word: (word,1)) \\\n    .reduceByKey(lambda n,m: n+m)\n\nprint(wordCount.take(3))\n\n# Ver en SparkUI",
       "user": "anonymous",
-      "dateUpdated": "2021-11-13 22:26:21.748",
-      "progress": 0,
+      "dateUpdated": "2021-11-14 13:52:14.925",
+      "progress": 66,
       "config": {
         "lineNumbers": true,
         "tableHide": false,
@@ -766,13 +790,37 @@
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "[(\u0027#\u0027, 1), (\u0027Apache\u0027, 3), (\u0027Guide](https://zeppelin.apache.org/docs/latest/index.html)\u003cbr/\u003e\u0027, 1)]\n"
+          }
+        ]
+      },
       "apps": [],
-      "runtimeInfos": {},
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d20"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1636842381748_723762958",
       "id": "paragraph_1634318082132_1416467574",
       "dateCreated": "2021-11-13 22:26:21.748",
-      "status": "READY"
+      "dateStarted": "2021-11-14 13:52:14.940",
+      "dateFinished": "2021-11-14 13:52:15.386",
+      "status": "FINISHED"
     },
     {
       "title": "Ejercicio",
@@ -860,7 +908,7 @@
       "title": "Logs análisis (muestra solo 2 lineas)",
       "text": "%pyspark\n\ninputRDD \u003d sc.textFile(\"./logs/\") # RDD de entrada\nerrorRDD \u003d inputRDD.filter(lambda line: \"ERROR\" in line) #  se crea un nuevo RDD\nconfigRDD \u003d inputRDD.filter(lambda line: \"config\" in line) # se crea un nuevo RDD\n\nerrOrConfRDD \u003d errorRDD.union(configRDD) \n\nfor ln, l in enumerate(errOrConfRDD.take(2)): # take(2) en vez de collect\n    print(\"Linea {}:\".format(ln), l)\n\n# Compara con primer programa en Spark UI\n",
       "user": "anonymous",
-      "dateUpdated": "2021-11-13 22:26:21.749",
+      "dateUpdated": "2021-11-14 13:52:25.788",
       "progress": 0,
       "config": {
         "lineNumbers": true,
@@ -882,13 +930,37 @@
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Linea 0:  INFO [2021-11-13 22:12:27,983] ({FIFOScheduler-interpreter_480738841-Worker-1} AbstractScheduler.java[runJob]:154) - Job paragraph_1636841499923_901413997 finished by scheduler interpreter_480738841 with status ERROR\nLinea 1: ERROR [2021-11-13 22:24:47,059] ({pool-2-thread-1} ProcessFunction.java[process]:47) - Internal error processing shutdown\n"
+          }
+        ]
+      },
       "apps": [],
-      "runtimeInfos": {},
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d21"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1636842381749_759673884",
       "id": "20201023-002121_604229819",
       "dateCreated": "2021-11-13 22:26:21.749",
-      "status": "READY"
+      "dateStarted": "2021-11-14 13:52:25.798",
+      "dateFinished": "2021-11-14 13:52:26.189",
+      "status": "FINISHED"
     },
     {
       "title": "Ejercicio",
@@ -933,9 +1005,9 @@
       "status": "READY"
     },
     {
-      "text": "%pyspark\n\nlinesRDD \u003d sc.textFile(\"./logs/\")\n\ncharsRDD \u003d linesRDD \\\n            .flatMap(lambda l: l)\n\nonlyCRDD \u003d charsRDD \\\n            ....(lambda car: ...\u003d\u003d...)\n\nprint(\"Aparecen {} letras c en los logs.\".format(onlyCRDD.count()))\n",
+      "text": "%pyspark\n\nlinesRDD \u003d sc.textFile(\"./logs/\")\n\ncharsRDD \u003d linesRDD \\\n            .flatMap(lambda l: l)\n\nonlyCRDD \u003d charsRDD \\\n            .filter(lambda char: char \u003d\u003d \"c\")\n\nprint(\"Aparecen {} letras c en los logs.\".format(onlyCRDD.count()))\n",
       "user": "anonymous",
-      "dateUpdated": "2021-11-13 22:26:21.749",
+      "dateUpdated": "2021-11-14 13:54:53.808",
       "progress": 0,
       "config": {
         "editorSetting": {
@@ -954,13 +1026,37 @@
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Aparecen 33054 letras c en los logs.\n"
+          }
+        ]
+      },
       "apps": [],
-      "runtimeInfos": {},
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d22"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1636842381749_975840321",
       "id": "20171013-175507_696892344",
       "dateCreated": "2021-11-13 22:26:21.749",
-      "status": "READY"
+      "dateStarted": "2021-11-14 13:54:53.827",
+      "dateFinished": "2021-11-14 13:54:54.790",
+      "status": "FINISHED"
     },
     {
       "text": "%md\n## ~.- Persistencia\n\nSpark **recomputa** el grafo de dependencias cuando se llama una **acción**:",
